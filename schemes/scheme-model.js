@@ -1,8 +1,8 @@
 const db = require('../data/db-config.js');
 
 module.exports = {
-    find
-    // findById,
+    find,
+    findById,
     // findPosts,
     // add
 };
