@@ -48,5 +48,6 @@ function update(changes, id) {
 }
 
 function remove(id) {
-    return 
+    return findById(id)
+    .del()
 }
