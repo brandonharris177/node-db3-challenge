@@ -48,6 +48,7 @@ function update(changes, id) {
 }
 
 function remove(id) {
-    return findById(id)
-    .del()
+    return db('schemes')
+    .where({id})
+    .first()
 }
