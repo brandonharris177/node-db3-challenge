@@ -4,7 +4,7 @@ module.exports = {
     find,
     findById,
     findSteps,
-    // add
+    add
 };
 
 function find() {
@@ -24,7 +24,10 @@ function findSteps(schemeId) {
     .select('s.id', 'sc.scheme_name', 's.step_number', 's.instructions')
 }
 
-function add(user) {
+function add(newScheme) {
     return db('schemes')
-    .insert(user, 'id');
+      .insert(newScheme, 'id')
+      .then(([id]) => {
+        return findById(id);
+      });
 }
